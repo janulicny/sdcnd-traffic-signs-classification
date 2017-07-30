@@ -19,11 +19,11 @@ The goals / steps of this project are the following:
 [image1]: ./images/norm_hist.png "Normalized histogram of the data set"
 [image2]: ./images/random_picture.png "BUmpy road ahead picture"
 [image3]: ./images/preprocessing.png "Traffic sign before and after preprocessing"
-[image4]: ./images/failed1.png "Failed prediction 1"
-[image5]: ./images/failed2.png "Failed prediction 2"
-[image6]: ./images/failed3.png "Failed prediction 3"
-[image7]: ./images/failed4.png "Failed prediction 4"
-[image8]: ./images/failed5.png "Failed prediction 5"
+[image4]: ./images/failed1.PNG "Failed prediction 1"
+[image5]: ./images/failed2.PNG "Failed prediction 2"
+[image6]: ./images/failed3.PNG "Failed prediction 3"
+[image7]: ./images/failed4.PNG "Failed prediction 4"
+[image8]: ./images/failed5.PNG "Failed prediction 5"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
