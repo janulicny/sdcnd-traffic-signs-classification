@@ -51,7 +51,7 @@ signs data set:
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. This histogram shows that the distribution of classes is aproximately similar across the training, validation and testing data sets. ANother thing worth mentioning is that some classes have way more examples than others. This may make the model prone the classifying the well represented classes preffereably to the ones with less data points. This could be imroved with data augmentation.
+Here is an exploratory visualization of the data set. This histogram shows that the distribution of classes is aproximately similar across the training, validation and testing data sets. Another thing worth mentioning is that some classes have way more examples than others. This may make the model prone the classifying the well represented classes preffereably to the ones with less data points. This could be improved with data augmentation.
 
 ![normalized histogram][image1]
 
@@ -63,11 +63,11 @@ In the code, random image from training set is shown with its label. Here is a a
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale, since I read in an comparison of that the best algorithms for this dataset that the conversion to grayscale did not hurt the performance. Also I wanted to reduce the size of the input into first layer since I was training on my laptop.
+As a first step, I decided to convert the images to grayscale, since I read in an comparison of the best algorithms for this dataset that the conversion to grayscale did not hurt the performance. Also, I wanted to reduce the size of the input into first layer since I was training on my laptop.
 
-Afterthat I apllied normalization, as was suggested during the course. I used the naive approach mentioned in the code template. NExt tme, I might use the normalization function included in scipy package
+After that, I apllied normalization, as was suggested during the course. I used the naive approach mentioned in the code template. Next tme, I might use the normalization function included in scipy package.
 
-Here is an example of a traffic sign image before and after preprocessing, the normalization cannot be seen, because pyplot's *imshow()* functions scales the inputs to 0-255 range.
+Here is an example of a traffic sign image before and after preprocessing, the normalization cannot be seen, because pyplot's *imshow()* function scales the inputs to 0-255 range.
 
 ![Traffic sign before preprocessing][image3]
 
@@ -125,44 +125,42 @@ I used the architecture that was decribed in the lessons in course. On the first
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric). 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-During my business trip to germany, I have taking 27 photos of traffic signs.
-Out of these, my model correctly classified 22 images. 
+During my business trip to Germany, I have taken 27 photos of traffic signs.
+Out of these, my model correctly classified 22 images, which gives an accuracy of 81.48 %. This is lower than the accuracy on the test set.
 
-The model was able to correctly guess 20 of the 27 traffic signs, which gives an accuracy of 81.48 %. This is lower than the accuracy on the test set.
-
-I will to go through the five failed predictions and try to figure out what might have confused the model.
+I will go through the five failed predictions and try to figure out what might have confused the model.
 
 * **1. failed prediction**
 
-This *General caution* sign was misclasified as *Slippery road*, but the algorithm was not sure the top probability was only 29%. The next four guesses can be seen in the image below and they do not contain *general caution*. In this case I think the explanation is pretty straight forward - the additional info plate below the sign is something that the model did not encounter in the training set and it cannot handle it. I beleive that croping this image to contain just tje sign would allow the model to appropriately label the image.
+This *General caution* sign was misclasified as *Slippery road*, but the algorithm was not sure, the top probability was only 29%. The next four guesses can be seen in the image below and they do not contain *General caution*. In this case, I think the explanation is pretty straight forward - the additional info plate below the sign is something that the model did not encounter in the training set and cannot handle. I believe that croping this image to contain just the sign would allow the model to appropriately label the image.
  
 ![Failed prediction 1][image4]
 
 
 * **2. failed prediction**
 
-This one is more interesting since *Speed limit 80 km/h* was misclassified as *Speed limit 50 km/h* with probabilty 49 %, followed by *Speed limit 60 km/h* with probabilty 32 % and only on the third place correct label *Speed limit 80 km/h* with  18 % confidence. I was really surprised that the model was not able to correctly label this image, because it seems really easy to me. The only explanation that I can think of tha slight blur of the image. That's why I would like to include blurring in augmenation step in future improvement efforts.
+This one is more interesting since *Speed limit 80 km/h* was misclassified as *Speed limit 50 km/h* with probabilty 49 %, followed by *Speed limit 60 km/h* with probabilty 32 %, and only on the third place was the correct label *Speed limit 80 km/h* with  18 % confidence. I was really surprised that the model was not able to correctly label this image, because it seems really easy to me. The only explanation that I can think of is the slight blur of the image. That's why I would like to include blurring in augmenation step in future improvement efforts.
 
 ![Failed prediction 2][image5]
  
 
 * **3. failed prediction**
 
-Again in this case, I feel that the blur of the image is responsible for the failed prediction. The *No passing sign* was clasiffied as *Speed limit 70 km/h* with 100 %.
+Again in this case, I feel that the blur of the image is responsible for the failed prediction. The *No passing sign* was classified as *Speed limit 70 km/h* with 100 %.
 
 ![Failed prediction 3][image6]
 
 
 * **4. failed prediction**
 
-Here, the text *Zone* below the sign confuses the model to clasiffy this *Speed limit 30 km/h* as *Keep right*. The correct label is the second guess, so we can say that the model was at least partially sucessful in this difficult example. 
+Here, the text *Zone* below the sign confuses the model to classify this *Speed limit 30 km/h* as *Keep right*. The correct label is the second guess, so we can say that the model was at least partially successful in this difficult example. 
 
 ![Failed prediction 4][image7]
 
 
 * **5. failed prediction**
 
-And last, this overexposed, blurred photo of *Bicycles crossing*. I was kind of surprised to see that eventhough the model thinks that the image is of *Road narrows on the right*, the second guess is the correct one. If I didn!t remember, what photos did I take, I don't think I would be able to guess this sign myself. I was impressed.
+And last, this overexposed, blurred photo of *Bicycles crossing*. I was kind of surprised to see that eventhough the model thinks that the image is of *Road narrows on the right*, the second guess is the correct one. If I didn't remember, what photos did I take, I don't think I would be able to guess this sign myself. I was impressed.
 
 Then I found out that the best neural network outperform humans on the german traffic signs dataset. Wow.
 
