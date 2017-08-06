@@ -97,18 +97,16 @@ To train the model, I used *ADAM* optimizer [[paper](https://arxiv.org/abs/1412.
 
 | Training parameters | Value |
 |---|---|
-| Loss fucntion | categorical cross-entropy |
+| Loss function | categorical cross-entropy |
 | Batch size | 32 |
 | Epochs | 4 |
 | Optimizer | ADAM |
-| ..* Learning rate | 0.001 |
-| ..* Beta 1 | 0.9 |
-| ..* Beta 2 | 0.999 |
-| ..* Fuzz factor | 1e-08 |
-| ..* Learning rate decay over each update | 0 |
+| - Learning rate | 0.001 |
+| - Beta 1 | 0.9 |
+| - Beta 2 | 0.999 |
+| - Fuzz factor | 1e-08 |
+| - Learning rate decay over each update | 0 |
 
-
-lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
