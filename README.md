@@ -20,11 +20,11 @@ The goals / steps of this project are the following:
 [image1]: ./images/norm_hist.png "Normalized histogram of the data set"
 [image2]: ./images/random_picture.png "BUmpy road ahead picture"
 [image3]: ./images/preprocessing.png "Traffic sign before and after preprocessing"
-[image4]: ./images/failed1.png "Failed prediction 1"
-[image5]: ./images/failed2.png "Failed prediction 2"
-[image6]: ./images/failed3.png "Failed prediction 3"
-[image7]: ./images/failed4.png "Failed prediction 4"
-[image8]: ./images/failed5.png "Failed prediction 5"
+[image4]: ./images/failed1.PNG "Failed prediction 1"
+[image5]: ./images/failed2.PNG "Failed prediction 2"
+[image6]: ./images/failed3.PNG "Failed prediction 3"
+[image7]: ./images/failed4.PNG "Failed prediction 4"
+[image8]: ./images/failed5.PNG "Failed prediction 5"
 [image9]: ./images/all1.png "New images 1"
 [image10]: ./images/all2.png "New images 2"
 [image11]: ./images/all3.png "New images 3"
@@ -133,7 +133,7 @@ The similar performance on validation and test data sets suggests that the model
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify. 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric). 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 During my business trip to germany, I have taking 27 photos of traffic signs.
 
